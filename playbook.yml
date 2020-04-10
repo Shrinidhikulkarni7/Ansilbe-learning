@@ -1,0 +1,9 @@
+---
+#copy master.config to ~/.gitconfig in my own system
+
+- name: Copy Git Configuration
+  hosts: localhost 
+  tasks: 
+  - name: Copy task
+    copy: src="master.gitconfig" dest="~/.gitconfig"
+
