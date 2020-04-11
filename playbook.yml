@@ -6,4 +6,11 @@
   tasks: 
   - name: Copy task
     copy: src="master.gitconfig" dest="~/.gitconfig"
-
+  
+- name: Install packages on fedora
+  hosts: localhost
+  tasks:
+  - dnf: name=bat state=latest
+  - dnf: name=jq state=latest
+  become: yes
+  become_user: root
