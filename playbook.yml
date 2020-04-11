@@ -10,7 +10,8 @@
 - name: Install packages on fedora
   hosts: localhost
   tasks:
-  - dnf: name=bat state=latest
-  - dnf: name=jq state=latest
+  - package: name=sl state=latest
+  - package: name=cmatrix state=latest
+    when: ansible_os_family == 'RedHat'
   become: yes
   become_user: root
